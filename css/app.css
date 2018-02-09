@@ -1,0 +1,59 @@
+/* BASE */
+
+.container{
+	margin: auto;
+}
+
+body{
+	margin:0;
+	padding:0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:17px;
+}
+
+ul{
+	margin: 0;
+}
+
+
+
+.stand-out{
+	color: #56a79a;
+}
+
+/* NAVBAR */
+#navbar{
+	text-transform: uppercase;
+}
+
+#navbar li{
+	display: inline;
+	padding-right: 20px;
+	list-style: none;
+}
+
+#navbar a{
+	text-decoration: none;
+	color: #888888;
+}
+
+#navbar li.current a, #navbar li a:hover{
+	color: #56a79a;
+	border-bottom: 3px solid #56a79a;
+	padding-bottom: 3px;
+}
+
+
+/* MAIN GAME GRID */
+
+.gameRow ul{
+	list-style: none;
+}
+
+.gameRow li{
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	border: 1px solid #56a79a;
+
+}
