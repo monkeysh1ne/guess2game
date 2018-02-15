@@ -44,6 +44,24 @@ ul{
 }
 
 
+/* SCORE SECTION */
+#scoreDisplay {
+	display: inline-block;
+	padding: 5px;
+	border: solid 2px #562c2c;
+	border-radius: 10px;
+	color: white;
+	background-color: #a65562;
+	padding: 0;
+	margin: 0;
+}
+
+#scoreDisplay{
+	padding: 0 20px;
+}
+
+
+
 /* MAIN GAME GRID */
 
 .gameRow ul{
@@ -55,5 +73,24 @@ ul{
 	height: 100px;
 	width: 100px;
 	border: 1px solid #56a79a;
+}
 
+
+/* GAME CONTROLS SECTION */
+
+#gameControlBtns{
+	list-style: none;
+	margin-top: 30px;
+}
+
+#gameControlBtns li{
+	display: inline-block;
+	background-color: #56a79a;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#gameControlBtns a{
+	text-decoration: none;
+	color: white;
 }
