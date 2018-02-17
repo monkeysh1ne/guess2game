@@ -1,3 +1,5 @@
+
+// Create Object to hold game grid cell data (row, column & image)
 function GridCell(cellRow, cellCol, cellImage) {
 	this.cellRow = cellRow,
 	this.cellCol = cellCol,
@@ -27,14 +29,33 @@ Object.__defineSetter__.call(GridCell.prototype, "setGridCellData",
 	});
 
 
-var testGridCellEntry = new GridCell();
+// Number of images to display in game grid
+var totNumImages = 24;
 
-testGridCellEntry.setGridCellData = "1, 1, /img/0.svg";
 
-document.write("GridCell data : " + testGridCellEntry.getGridCellData + "<br />");
 
-var anotherGridCell = new GridCell();
+// Select all LI elements in all game grid rows
+var listItems = document.getElementById("gr1").getElementsByTagName("li");
 
-anotherGridCell.setGridCellData = "1, 2, /img/1.svg";
+// Loop through LI collection adding backgroundImage source
+for (i = 0; i < listItems.length; i++) {
+	listItems[i].style.backgroundImage = "url(../img/" + i.toString() + ".svg";
+	listItems[i].style.backgroundRepeat = "no-repeat";
+	listItems[i].style.backgroundPosition = "center center";
+	listItems[i].addEventListener("click", swapImage)
+}
 
-document.write("GridCell data : " + anotherGridCell.getGridCellData + "<br />");
+
+function swapImage() {
+	if (this.style.backgroundImage == "url(../img/999.svg)") {
+		// check if li id is double digit - e.g., 11,12,13..
+		if (this.id.length < 4) {
+			this.style.backgroundImage = "url(../img/" + (this.id.charAt(2)-1) + ".svg)";
+		// if li id is single digit - e.g., 1,2,3..
+		} else {
+			this.style.backgroundImage = "url(../img/" + (this.id.charAt(3)-1) + ".svg)";
+		}
+	} else {
+		this.style.backgroundImage = "url(../img/999.svg)";
+	}
+}
