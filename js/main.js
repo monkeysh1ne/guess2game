@@ -33,7 +33,6 @@ Object.__defineSetter__.call(GridCell.prototype, "setGridCellData",
 var totNumImages = 24;
 
 
-
 // Select all LI elements in all game grid rows
 var listItems = document.getElementById("gr1").getElementsByTagName("li");
 
@@ -42,20 +41,7 @@ for (i = 0; i < listItems.length; i++) {
 	listItems[i].style.backgroundImage = "url(../img/" + i.toString() + ".svg";
 	listItems[i].style.backgroundRepeat = "no-repeat";
 	listItems[i].style.backgroundPosition = "center center";
-	listItems[i].addEventListener("click", swapImage)
-}
-
-
-function swapImage() {
-	if (this.style.backgroundImage == "url(../img/999.svg)") {
-		// check if li id is double digit - e.g., 11,12,13..
-		if (this.id.length < 4) {
-			this.style.backgroundImage = "url(../img/" + (this.id.charAt(2)-1) + ".svg)";
-		// if li id is single digit - e.g., 1,2,3..
-		} else {
-			this.style.backgroundImage = "url(../img/" + (this.id.charAt(3)-1) + ".svg)";
-		}
-	} else {
-		this.style.backgroundImage = "url(../img/999.svg)";
-	}
+	listItems[i].addEventListener("click", function() {
+		this.classList.toggle('blankImg');
+	});
 }

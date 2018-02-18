@@ -98,3 +98,7 @@ ul{
 .gridRow {
 	margin-top: 40px;
 }
+
+.blankImg {
+	background-image: url("../img/999.svg") !important;
+}
